@@ -125,6 +125,10 @@ desktop-file-validate %{_datadir}/applications/keepassxc.desktop &> /dev/null ||
 %{_mandir}/man1/keepassxc-cli.1.gz
 
 %changelog
+* Wed Mar 07 2018 Mikkel Kroman <mk@maero.dk> - 2.3.1-3
+- Added libcurl-devel, libargon2-devel and libsodium-devel to BuildRequires
+- Updated to version 2.3.1
+
 * Wed Dec 27 2017 Mukundan Ragavan <nonamedotc@fedoraproject.org> - 2.2.4-3
 - Fix specfile error
 
