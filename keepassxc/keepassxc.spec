@@ -122,7 +122,7 @@ desktop-file-validate %{_datadir}/applications/keepassxc.desktop &> /dev/null ||
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/icons/hicolor/*/*/*keepassxc*
 %{_libdir}/%{name}
-%{_mandir}/man1/keepassxc-cli.1.gz
+%{_mandir}/man1/keepassxc-cli.1*
 
 %changelog
 * Wed Mar 07 2018 Mikkel Kroman <mk@maero.dk> - 2.3.1-3
