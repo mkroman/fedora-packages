@@ -47,7 +47,7 @@ Requires:       python3-libs
 
 
 %prep
-%setup -n %{name}-%{version}
+%setup -q -n SoapySDR-%{name}-%{version}
 
 
 %build
@@ -56,7 +56,7 @@ cd build
 
 %cmake .. \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_BUILD_TYPE=Release
 
 make %{?_smp_mflags}
 
@@ -71,9 +71,33 @@ python2 -c "import SoapySDR; print(SoapySDR.getAPIVersion())"
 
 
 %files
-%license add-license-file-here
-%doc add-docs-here
+%{_bindir}/SoapySDRUtil
+%{_mandir}/man1/SoapySDRUtil.1*
+%doc LICENSE_1_0.txt Changelog.txt README.md
 
+
+%files devel
+%{_includedir}/SoapySDR
+%{_libdir}/libSoapySDR*
+%{_libdir}/pkgconfig/*.pc
+%{_datadir}/cmake
+
+
+%files libs
+%{_libdir}/libSoapySDR*
+
+
+%files python
+%{_libdir}/python2.*/site-packages/*.so
+%{_libdir}/python2.*/site-packages/*.py
+%{_libdir}/python2.*/site-packages/*.pyo
+%{_libdir}/python2.*/site-packages/*.pyc
+
+
+%files python3
+%{_libdir}/python3.*/site-packages/*.so
+%{_libdir}/python3.*/site-packages/*.py
+%{_libdir}/python3.*/site-packages/__pycache__/*.pyc
 
 
 %changelog
