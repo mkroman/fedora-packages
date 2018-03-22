@@ -66,8 +66,8 @@ cd build
 make install DESTDIR=%{buildroot}
 
 
-%check python
-python2 -c "import SoapySDR; print(SoapySDR.getAPIVersion())"
+# %check python3
+# python3 -c "import SoapySDR; print(SoapySDR.getAPIVersion())"
 
 
 %files
